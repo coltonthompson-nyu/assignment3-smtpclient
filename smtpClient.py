@@ -66,7 +66,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Fill in start
     #print("sending endmsg")
     clientSocket.send(endmsg.encode())
-    #sentEND = clientSocket.recv(1024).decode()
+    sentEND = clientSocket.recv(1024).decode()
     #print("sentEND code: " + sentEND)
     # Fill in end
 
@@ -74,7 +74,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Fill in start
     #print("quitting")
     clientSocket.send(("QUIT\r\n").encode())
-    #sentQUIT = clientSocket.recv(1024).decode()
+    sentQUIT = clientSocket.recv(1024).decode()
     #print("sentQUIT code: " + sentQUIT) #should return 221
     clientSocket.close()
     # Fill in end
